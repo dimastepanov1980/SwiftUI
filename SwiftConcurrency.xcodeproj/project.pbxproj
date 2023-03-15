@@ -11,6 +11,7 @@
 		5FB303F329C13A9800C0A6D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB303F229C13A9800C0A6D2 /* ContentView.swift */; };
 		5FB303F529C13A9A00C0A6D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FB303F429C13A9A00C0A6D2 /* Assets.xcassets */; };
 		5FB303F829C13A9A00C0A6D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FB303F729C13A9A00C0A6D2 /* Preview Assets.xcassets */; };
+		5FB303FF29C13AF800C0A6D2 /* DoCatchTryThrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB303FE29C13AF800C0A6D2 /* DoCatchTryThrows.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		5FB303F229C13A9800C0A6D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5FB303F429C13A9A00C0A6D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FB303F729C13A9A00C0A6D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5FB303FE29C13AF800C0A6D2 /* DoCatchTryThrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoCatchTryThrows.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				5FB303F029C13A9800C0A6D2 /* SwiftConcurrencyApp.swift */,
 				5FB303F229C13A9800C0A6D2 /* ContentView.swift */,
+				5FB303FE29C13AF800C0A6D2 /* DoCatchTryThrows.swift */,
 				5FB303F429C13A9A00C0A6D2 /* Assets.xcassets */,
 				5FB303F629C13A9A00C0A6D2 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB303FF29C13AF800C0A6D2 /* DoCatchTryThrows.swift in Sources */,
 				5FB303F329C13A9800C0A6D2 /* ContentView.swift in Sources */,
 				5FB303F129C13A9800C0A6D2 /* SwiftConcurrencyApp.swift in Sources */,
 			);
