@@ -26,7 +26,18 @@ class DoCatchTryThrowsDataManager {
         }
     }
     
-
+    func getTitleThrows() throws -> String {
+        if isActive {
+            return "New Title Thows"
+        } else {
+            throw URLError(.badServerResponse)
+        }
+    }
+    
+    func getTitleThrowsError() throws -> String {
+        throw URLError(.badServerResponse)
+    }
+    
 }
 
 class DoCatchTryThrowsViewModel: ObservableObject {
@@ -35,35 +46,51 @@ class DoCatchTryThrowsViewModel: ObservableObject {
     let manager = DoCatchTryThrowsDataManager()
     // getTitleTuple
     /*
-    func fetchDate() {
-        let newValue = manager.getTitleTuple()
-        if let newLable = newValue.lable {
-            self.lable = newLable
-            self.colorLable = newValue.color
-        } else if let error = newValue.error {
-            self.lable = error.localizedDescription
-        }
-    }
+     func fetchDate() {
+     let newValue = manager.getTitleTuple()
+     if let newLable = newValue.lable {
+     self.lable = newLable
+     self.colorLable = newValue.color
+     } else if let error = newValue.error {
+     self.lable = error.localizedDescription
+     }
+     }
      */
     
     // getTitleUseResult
+    /*
+     func fetchData() {
+     let result = manager.getTitleUseResult()
+     
+     switch result {
+     case .success(let newLable):
+     self.lable = newLable
+     case .failure(let error):
+     self.lable = error.localizedDescription
+     }
+     }
+     */
+    
+    // getTitleThrows
     func fetchData() {
-        let result = manager.getTitleUseResult()
-        
-        switch result {
-        case .success(let newLable):
-            self.lable = newLable
-        case .failure(let error):
+        do {
+            let newLable = try? manager.getTitleThrowsError()
+            if let newLable = newLable {
+                self.lable = newLable
+            }
+            
+            let finalLable = try manager.getTitleThrows()
+            self.lable = finalLable
+        } catch {
             self.lable = error.localizedDescription
         }
     }
-
 }
 
 
 struct DoCatchTryThrows: View {
     @StateObject private var viewModel = DoCatchTryThrowsViewModel()
-
+    
     var body: some View {
         Text(viewModel.lable)
             .frame(width: 300, height: 300)
