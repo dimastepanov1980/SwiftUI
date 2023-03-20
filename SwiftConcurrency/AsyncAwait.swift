@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 
 class AsyncAwaitManager {
@@ -31,18 +32,64 @@ class AsyncAwaitManager {
             .resume()
         }
     }
+  
+    func downloadWithCombine() -> AnyPublisher<UIImage?, Error> {
+        guard let url = url else { return Fail(error: URLError(.badURL)).eraseToAnyPublisher() }
+
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .tryMap { data, response -> UIImage? in
+                guard let image = UIImage(data: data) else {
+                    throw URLError(.cannotDecodeContentData)
+                }
+                return image
+            }
+            .mapError { error -> Error in
+                return error
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func downloadWithAsync() async throws -> UIImage? {
+        do {
+            guard let url = url else { return nil }
+            let (data, responce) = try await URLSession.shared.data(from: url)
+            return handleResponce(data: data, response: responce)
+        } catch  {
+            throw error
+        }
+    }
 }
 
 
 class AsyncAwaitViewModel: ObservableObject {
     @Published var image: UIImage? = nil
     let loader = AsyncAwaitManager()
+    var cancellables = Set<AnyCancellable>()
+    // downloadWithEscaping
+    //    func fetchData() {
+    //        loader.downloadWithEscaping { [weak self] image, error in
+    //            DispatchQueue.main.async {
+    //                    self?.image = image
+    //            }
+    //        }
+    //    }
+   
+    // downloadWithCombine
+//    func fetchData() {
+//        loader.downloadWithCombine()
+//            .receive(on: DispatchQueue.main)
+//            .sink { _ in
+//
+//            } receiveValue: { [weak self] image in
+//                self?.image = image
+//            }
+//            .store(in: &cancellables)
+//    }
     
-    func fetchData() {
-        loader.downloadWithEscaping { [weak self] image, error in
-            DispatchQueue.main.async {
-                    self?.image = image
-            }
+    func fetchData() async {
+        let image = try? await loader.downloadWithAsync()
+        await MainActor.run {
+            self.image = image
         }
     }
 }
@@ -59,8 +106,10 @@ struct AsyncAwait: View {
                     .frame(width: 300, height: 300)
             }
             
-        }.onAppear{
-            viewModel.fetchData()
+        }.onAppear {
+            Task {
+                await viewModel.fetchData()
+            }
         }
     }
 }
