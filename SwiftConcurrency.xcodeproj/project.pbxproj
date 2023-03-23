@@ -15,6 +15,7 @@
 		5FB303F829C13A9A00C0A6D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FB303F729C13A9A00C0A6D2 /* Preview Assets.xcassets */; };
 		5FB303FF29C13AF800C0A6D2 /* DoCatchTryThrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB303FE29C13AF800C0A6D2 /* DoCatchTryThrows.swift */; };
 		5FB3040129C2D3FE00C0A6D2 /* AsyncAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB3040029C2D3FE00C0A6D2 /* AsyncAwait.swift */; };
+		5FC35C9A29CC33600083559C /* AsyncLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC35C9929CC33600083559C /* AsyncLet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		5FB303F729C13A9A00C0A6D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5FB303FE29C13AF800C0A6D2 /* DoCatchTryThrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoCatchTryThrows.swift; sourceTree = "<group>"; };
 		5FB3040029C2D3FE00C0A6D2 /* AsyncAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwait.swift; sourceTree = "<group>"; };
+		5FC35C9929CC33600083559C /* AsyncLet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncLet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				5FB3040029C2D3FE00C0A6D2 /* AsyncAwait.swift */,
 				5FABB83A29C894AD007E0531 /* AsyncAwaitDetails.swift */,
 				5FABB83C29C99C8E007E0531 /* TaskBootcamp.swift */,
+				5FC35C9929CC33600083559C /* AsyncLet.swift */,
 				5FB303F429C13A9A00C0A6D2 /* Assets.xcassets */,
 				5FB303F629C13A9A00C0A6D2 /* Preview Content */,
 			);
@@ -151,6 +154,7 @@
 			files = (
 				5FB303FF29C13AF800C0A6D2 /* DoCatchTryThrows.swift in Sources */,
 				5FB303F329C13A9800C0A6D2 /* ContentView.swift in Sources */,
+				5FC35C9A29CC33600083559C /* AsyncLet.swift in Sources */,
 				5FABB83B29C894AD007E0531 /* AsyncAwaitDetails.swift in Sources */,
 				5FB303F129C13A9800C0A6D2 /* SwiftConcurrencyApp.swift in Sources */,
 				5FABB83D29C99C8E007E0531 /* TaskBootcamp.swift in Sources */,
