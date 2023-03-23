@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5FABB83B29C894AD007E0531 /* AsyncAwaitDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABB83A29C894AD007E0531 /* AsyncAwaitDetails.swift */; };
+		5FABB83D29C99C8E007E0531 /* TaskBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABB83C29C99C8E007E0531 /* TaskBootcamp.swift */; };
 		5FB303F129C13A9800C0A6D2 /* SwiftConcurrencyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB303F029C13A9800C0A6D2 /* SwiftConcurrencyApp.swift */; };
 		5FB303F329C13A9800C0A6D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB303F229C13A9800C0A6D2 /* ContentView.swift */; };
 		5FB303F529C13A9A00C0A6D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FB303F429C13A9A00C0A6D2 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		5FABB83A29C894AD007E0531 /* AsyncAwaitDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitDetails.swift; sourceTree = "<group>"; };
+		5FABB83C29C99C8E007E0531 /* TaskBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskBootcamp.swift; sourceTree = "<group>"; };
 		5FB303ED29C13A9800C0A6D2 /* SwiftConcurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftConcurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB303F029C13A9800C0A6D2 /* SwiftConcurrencyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftConcurrencyApp.swift; sourceTree = "<group>"; };
 		5FB303F229C13A9800C0A6D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				5FB303FE29C13AF800C0A6D2 /* DoCatchTryThrows.swift */,
 				5FB3040029C2D3FE00C0A6D2 /* AsyncAwait.swift */,
 				5FABB83A29C894AD007E0531 /* AsyncAwaitDetails.swift */,
+				5FABB83C29C99C8E007E0531 /* TaskBootcamp.swift */,
 				5FB303F429C13A9A00C0A6D2 /* Assets.xcassets */,
 				5FB303F629C13A9A00C0A6D2 /* Preview Content */,
 			);
@@ -150,6 +153,7 @@
 				5FB303F329C13A9800C0A6D2 /* ContentView.swift in Sources */,
 				5FABB83B29C894AD007E0531 /* AsyncAwaitDetails.swift in Sources */,
 				5FB303F129C13A9800C0A6D2 /* SwiftConcurrencyApp.swift in Sources */,
+				5FABB83D29C99C8E007E0531 /* TaskBootcamp.swift in Sources */,
 				5FB3040129C2D3FE00C0A6D2 /* AsyncAwait.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
