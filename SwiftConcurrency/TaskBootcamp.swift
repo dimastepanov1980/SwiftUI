@@ -13,7 +13,7 @@ class TaskBootcampViewModel: ObservableObject {
     
     func fetchData() async {
         do {
-            try? await Task.sleep(nanoseconds: 5_000_000_000)
+          //  try? await Task.sleep(nanoseconds: 5_000_000_000)
             guard let url = URL(string: "https://picsum.photos/200") else { return }
             let (data, _) = try await URLSession.shared.data(from: url)
             await MainActor.run(body: {
@@ -77,31 +77,31 @@ struct TaskBootcamp: View {
             await viewModel.fetchData()
         }
         
-        .onAppear {
-            Task {
-                await viewModel.fetchData2()
-            }
-
-// Приоритет по убыванию
-//            Task(priority: .high) {
-//                print("high \(Thread.current) \(Task.currentPriority)")
-//            }
-//            Task(priority: .userInitiated) {
-//                print("userInitiated \(Thread.current) \(Task.currentPriority)")
-//            }
-//            Task(priority: .medium) {
-//                print("medium \(Thread.current) \(Task.currentPriority)")
-//            }
-//            Task(priority: .low) {
-//                print("low \(Thread.current) \(Task.currentPriority)")
-//            }
-//            Task(priority: .utility) {
-//                print("utility \(Thread.current) \(Task.currentPriority)")
-//            }
-//            Task(priority: .background) {
-//                print("background \(Thread.current) \(Task.currentPriority)")
-//            }
-        }
+//        .onAppear {
+////            Task {
+////                await viewModel.fetchData2()
+////            }
+//
+//// Приоритет по убыванию
+////            Task(priority: .high) {
+////                print("high \(Thread.current) \(Task.currentPriority)")
+////            }
+////            Task(priority: .userInitiated) {
+////                print("userInitiated \(Thread.current) \(Task.currentPriority)")
+////            }
+////            Task(priority: .medium) {
+////                print("medium \(Thread.current) \(Task.currentPriority)")
+////            }
+////            Task(priority: .low) {
+////                print("low \(Thread.current) \(Task.currentPriority)")
+////            }
+////            Task(priority: .utility) {
+////                print("utility \(Thread.current) \(Task.currentPriority)")
+////            }
+////            Task(priority: .background) {
+////                print("background \(Thread.current) \(Task.currentPriority)")
+////            }
+//        }
     }
 }
 

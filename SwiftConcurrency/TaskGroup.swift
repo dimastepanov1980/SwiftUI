@@ -76,6 +76,8 @@ class TaskGroupDataManager {
                 }
             }
             
+            try Task.checkCancellation()
+            print("image downlaod seccesfull")
             return images
         }
     }
@@ -101,7 +103,24 @@ class TaskGroupViewModel: ObservableObject {
     
     func getData() async {
         if let images = try? await manager.fetchDataTaskGroupWithArray() {
-            self .images.append(contentsOf: images)
+            await MainActor.run(body: {
+                self.images.append(contentsOf: images)
+                print("image getData successfully")
+            })
+        } else {
+            print("Отменил")
+        }
+    }
+}
+
+struct TaskHomeView: View {
+    var body: some View {
+        NavigationView {
+            ZStack {
+                NavigationLink("ClickMe TaskHomeView") {
+                    TaskGroup()
+                }
+            }
         }
     }
 }
@@ -109,7 +128,7 @@ class TaskGroupViewModel: ObservableObject {
 struct TaskGroup: View {
     @StateObject private var viewModel = TaskGroupViewModel()
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
-
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -123,11 +142,12 @@ struct TaskGroup: View {
                         }
                     }
                 }
+                .task {
+                    await viewModel.getData()
+                }
             }
             .navigationTitle("Task Group")
-            .task {
-                await viewModel.getData()
-            }
+
         }
     }
 }

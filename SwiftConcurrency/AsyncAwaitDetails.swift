@@ -26,12 +26,13 @@ class AsyncAwaitDetailsViewModel: ObservableObject {
     }
     
     func addDataArrayAsync() async {
-        let dataAsync = "Some Data Async \(Thread.current)"
+        let dataAsync = "Добавляем без задержки \(Thread.current)"
+        let dataAsync2 = "Эмитируем задержку сервера 5 сек \(Thread.current)"
         self.dataArray.append(dataAsync)
-        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        try? await Task.sleep(nanoseconds: 5_000_000_000)
         
         await MainActor.run(body: {
-            self.dataArray.append(dataAsync)
+            self.dataArray.append(dataAsync2)
             
             let dataAsync3 = "Some Data Async3: \(Thread.current)"
             self.dataArray.append (dataAsync3)
@@ -41,7 +42,7 @@ class AsyncAwaitDetailsViewModel: ObservableObject {
     }
     
     func addOneMoreTask() async {
-        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        try? await Task.sleep(nanoseconds: 5_000_000_000)
         let oneMoreTask = "One More Task: \(Thread.current)"
         
         await MainActor.run(body: {
@@ -66,6 +67,8 @@ struct AsyncAwaitDetails: View {
 //            viewModel.addDataArrayOne()
 //            viewModel.addDataArrayTwo()
             Task {
+// await - ожидаем ответа, пока ответ не придет мы не перейждем к выполнению кода дальше.
+// работа происходит в паралельных потоках (это не обязательно, хкод сам принимает решение) для возврата в основнй поток используем  await MainActor.run(body: { тут пишем что хотим выполнить в осноном потоке как правило обновляем UI}
                 await viewModel.addDataArrayAsync()
                 let finalText = "Final Text \(Thread.current)"
                 viewModel.dataArray.append(finalText)

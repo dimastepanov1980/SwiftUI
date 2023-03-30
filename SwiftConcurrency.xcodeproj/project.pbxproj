@@ -18,6 +18,7 @@
 		5FC35C9A29CC33600083559C /* AsyncLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC35C9929CC33600083559C /* AsyncLet.swift */; };
 		5FC35C9C29CD38D40083559C /* TaskGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC35C9B29CD38D40083559C /* TaskGroup.swift */; };
 		5FC35C9E29CD94890083559C /* CheckedContinuation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC35C9D29CD94890083559C /* CheckedContinuation.swift */; };
+		5FC35CA029CEE3ED0083559C /* StructClassActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC35C9F29CEE3ED0083559C /* StructClassActor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		5FC35C9929CC33600083559C /* AsyncLet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncLet.swift; sourceTree = "<group>"; };
 		5FC35C9B29CD38D40083559C /* TaskGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroup.swift; sourceTree = "<group>"; };
 		5FC35C9D29CD94890083559C /* CheckedContinuation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckedContinuation.swift; sourceTree = "<group>"; };
+		5FC35C9F29CEE3ED0083559C /* StructClassActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructClassActor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				5FC35C9929CC33600083559C /* AsyncLet.swift */,
 				5FC35C9B29CD38D40083559C /* TaskGroup.swift */,
 				5FC35C9D29CD94890083559C /* CheckedContinuation.swift */,
+				5FC35C9F29CEE3ED0083559C /* StructClassActor.swift */,
 				5FB303F429C13A9A00C0A6D2 /* Assets.xcassets */,
 				5FB303F629C13A9A00C0A6D2 /* Preview Content */,
 			);
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FB303FF29C13AF800C0A6D2 /* DoCatchTryThrows.swift in Sources */,
+				5FC35CA029CEE3ED0083559C /* StructClassActor.swift in Sources */,
 				5FB303F329C13A9800C0A6D2 /* ContentView.swift in Sources */,
 				5FC35C9C29CD38D40083559C /* TaskGroup.swift in Sources */,
 				5FC35C9A29CC33600083559C /* AsyncLet.swift in Sources */,

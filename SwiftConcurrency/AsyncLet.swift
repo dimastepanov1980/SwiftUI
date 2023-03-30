@@ -49,7 +49,7 @@ struct AsyncLet: View {
                 Task {
                     
                     do {
-                        // Все запросы обрабатывется одновременно, если в одном из запросов будет задержка, другие обработаются но не добявятся в массив пока не дождемся выполнения всех запросов
+                        // Все запросы обрабатывется одновременно, если в одном из запросов будет задержка, другие будут весеть в очереди пока не обработается предидущий
                         async let fetchImage = try await viewModel.fetchData()
                         async let fetchImage1 = try await viewModel.fetchData()
                         async let fetchImage2 = try await viewModel.fetchData()
